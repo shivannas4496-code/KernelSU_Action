@@ -108,11 +108,11 @@ jobs:
       kernel_release: ${{ steps.meta.outputs.kernel_release }}
       susfs_version: ${{ steps.meta.outputs.susfs_version }}
     env:
-      WORKSPACE: ${{ github.workspace }}/kernel_workspace
-      CONFIG_ENV: ${{ inputs.config }}
-      CCACHE_COMPILERCHECK: "%compiler% -dumpmachine; %compiler% -dumpversion"
-      CCACHE_NOHASHDIR: "true"
-      CCACHE_HARDLINK: "true"
+  KERNEL_SOURCE: 'https://github.com'
+  KERNEL_BRANCH: 'ten'
+  KERNEL_DEFCONFIG: 'universal9611_defconfig'
+  COMPILER: 'clang' 
+  
 
       # workflow inputs -> IN_* overrides consumed by scripts/config.sh
       IN_KSU_VARIANT: ${{ inputs.ksu_variant }}
